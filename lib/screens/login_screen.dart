@@ -8,7 +8,7 @@ class LoginScreen extends StatelessWidget {
         padding: EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: [ 
             Text(
               "Giriş Yap",
               style: TextStyle(
