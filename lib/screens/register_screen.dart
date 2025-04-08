@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'homepage.dart'; // Ana sayfa import
 
 class RegisterScreen extends StatelessWidget {
   @override
@@ -48,7 +49,13 @@ class RegisterScreen extends StatelessWidget {
                 backgroundColor: Color(0xFF800020), // Burgundy
                 minimumSize: Size(double.infinity, 50),
               ),
-              onPressed: () {},
+              onPressed: () {
+                // Kayıt başarılı → Anasayfaya yönlendir
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                );
+              },
               child: Text("Kayıt Ol", style: TextStyle(color: Colors.white)),
             ),
             SizedBox(height: 20),

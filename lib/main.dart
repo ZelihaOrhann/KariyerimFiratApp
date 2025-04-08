@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/auth_screen.dart'; // Tek bir ekranda giriş & kayıt işlemleri
 
+
 void main() {
   runApp(MyApp());
 }

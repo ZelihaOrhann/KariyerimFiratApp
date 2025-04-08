@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'homepage.dart'; // Ana sayfa import
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [ 
-            Text(
+          children: [
+            const SizedBox(height: 60),
+            const Text(
               "Giriş Yap",
               style: TextStyle(
                 fontSize: 28,
@@ -17,35 +21,46 @@ class LoginScreen extends StatelessWidget {
                 color: Colors.black,
               ),
             ),
-            SizedBox(height: 20),
-            TextField(decoration: InputDecoration(labelText: "E-Posta Adresi")),
-            TextField(
+            const SizedBox(height: 20),
+            const TextField(
+              decoration: InputDecoration(labelText: "E-Posta Adresi"),
+            ),
+            const TextField(
               obscureText: true,
               decoration: InputDecoration(
                 labelText: "Şifre",
                 suffixIcon: Icon(Icons.visibility_off),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               children: [
                 Checkbox(value: false, onChanged: (value) {}),
-                Text("Beni Hatırla"),
+                const Text("Beni Hatırla"),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF800020), // Burgundy
-                minimumSize: Size(double.infinity, 50),
+                backgroundColor: const Color(0xFF800020), // Burgundy
+                minimumSize: const Size(double.infinity, 50),
               ),
-              onPressed: () {},
-              child: Text("Giriş Yap", style: TextStyle(color: Colors.white)),
+              onPressed: () {
+                // Giriş başarılı → Anasayfaya yönlendir
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                );
+              },
+              child: const Text(
+                "Giriş Yap",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 Icon(
                   Icons.business_center,
                   size: 40,
